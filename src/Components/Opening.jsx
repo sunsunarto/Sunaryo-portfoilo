@@ -1,6 +1,7 @@
 import {useEffect, useRef} from "react";
 import "../ComponentsStyle/Opening.css"
 import gsap from "gsap";
+import PortofoiloImg from "../assets/WhatsApp Image 2025-03-25 at 10.25.43_4df92cc5.jpg";
 
 function Opening() {
 
@@ -106,7 +107,7 @@ function Opening() {
                     <button ref={buttonRef}>Project</button>
                 </div>
                 <div className="profileImg">
-                    <img src="src/assets/WhatsApp Image 2025-03-25 at 10.25.43_4df92cc5.jpg" alt="" />
+                    <img src={PortofoiloImg} alt="" />
                 </div>
             </div>
         </div>
