@@ -101,7 +101,7 @@ function Opening() {
             <div className="opening">
                 <div className="text">
                     <p>I am a <span>front-end developer</span> from Indonesia</p>
-                    <h1>Greetings and a warm welcome to</h1>
+                    <h1>Greetings,</h1>
                     <h1>My Name, Sunaryo</h1>
                     <p>your gateway to my portfolio <br/>I choose in the of coding and design because I have a passion for coding and design.<br/> I also can speak english and chinese not to high just the daliy conversation.</p>
                     <button ref={buttonRef}>Project</button>
