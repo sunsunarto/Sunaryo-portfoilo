@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import gsap from 'gsap'
 import './App.css'
 import Header from './Components/Header'
-import Opening from './Components/opening'
+import Opening from './Components/Opening'
 
 function App() {
   
