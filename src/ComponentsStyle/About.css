@@ -31,7 +31,6 @@
     border-radius: 10px;
     color : white;
     .eduCon{
-        display: flex;
         width: 400px;
         margin-top: 10px;
         padding: 0 20px;
@@ -57,6 +56,30 @@
                 }
                 text-align: start;
             }
+        }
+    }
+}
+@media screen and (max-width: 800px){
+    
+}
+@media  screen and (max-width: 500px) {
+    .skills{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 10px;
+        padding: 0 20px;
+        border-radius: 10px;
+        color : white;
+        flex-wrap: wrap;
+    }
+    .eduCon{
+        max-width: 300px !important;
+        .edu{
+            display: flex;
+            justify-content: center;
+
         }
     }
 }

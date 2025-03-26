@@ -48,7 +48,7 @@ function About() {
         ))}
       </div>
       <div className="education">
-        <h2>Education</h2>
+        <h2>Education & certificate</h2>
         <div className="eduCon index1">
           <div className="edu">
             <div className="eduLogo">
