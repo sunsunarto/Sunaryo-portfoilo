@@ -6,7 +6,7 @@ import PortofoiloImg from "../assets/WhatsApp_Image_2025-03-25_at_10.25.43_4df92
 
 function Opening() {
 
-    const buttonRef = useRef(null)
+    const buttonRef = useRef(null);
     const motionRef = useRef(null);
 
     useEffect(() => { //openingFolder

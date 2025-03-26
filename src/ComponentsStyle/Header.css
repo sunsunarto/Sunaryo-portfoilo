@@ -1,7 +1,7 @@
 .HeaderContainer{
     height: 100vh;
     width: 100vw;
-    background-color: black;
+    background-size: cover;
 }
 .mainHeader{
     padding: 50px;
@@ -30,4 +30,15 @@ li{
 a{
     text-decoration: none;
     color: white;
+}
+.headerOpening{
+    .openingText{
+        text-align: center;
+        h1{
+            font-size: 50px;
+        }
+        p{
+            font-size: 20px;
+        }
+    }
 }
