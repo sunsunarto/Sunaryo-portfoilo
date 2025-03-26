@@ -1,11 +1,23 @@
+.HeaderContainer{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
 .mainHeader{
     padding: 50px;
+    color: white;
 }
 .header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    h4{
+        color: #F3E9D8;
+    }
+    .Textsun{
+        color: #FFF760;
+    }
 }
 ul{
     display: flex;
@@ -17,5 +29,5 @@ li{
 }
 a{
     text-decoration: none;
-    color: black;
+    color: white;
 }

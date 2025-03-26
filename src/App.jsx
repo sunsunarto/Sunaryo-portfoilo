@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import gsap from 'gsap'
 import './App.css'
-import Header from './Components/Header'
-import Opening from './Components/Opening'
+import Header from './Components/Header.jsx'
+import Opening from './Components/Opening.jsx'
+import About from './Components/About.jsx'
+import { BrowserRouter as  Routers,Routes, Route } from 'react-router-dom'
 
 function App() {
   
@@ -21,9 +23,15 @@ function App() {
   }, [])
 
   return (
+    
     <div className='App'>
-      <Header />
-      <Opening />
+      <Routers>
+        <Routes>
+          <Route path="/" element={<Header/>} />
+          <Route path="/Home" element={<Opening/>} />
+          <Route path="/About" element={<About/>} />
+        </Routes>
+      </Routers>
     </div>
   )
 }

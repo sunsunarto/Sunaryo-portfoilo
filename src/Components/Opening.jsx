@@ -1,7 +1,7 @@
 import {useEffect, useRef} from "react";
 import "../ComponentsStyle/Opening.css"
 import gsap from "gsap";
-import PortofoiloImg from "../assets/WhatsApp Image 2025-03-25 at 10.25.43_4df92cc5.jpg";
+import PortofoiloImg from "../assets/WhatsApp_Image_2025-03-25_at_10.25.43_4df92cc5-removebg-preview.png";
 
 function Opening() {
 
@@ -56,14 +56,14 @@ function Opening() {
             if (gsap.isTweening(button)) {
               gsap.killTweensOf(button);
             }
-            gsap.to(button, { scale: 1.3 });
+            gsap.to(button, { scale: 1.3, backgroundColor: 'red',  color: 'white' });
           };
     
           const onMouseLeave = () => {
             if (gsap.isTweening(button)) {
               gsap.killTweensOf(button);
             }
-            gsap.to(button, { scale: 1 });
+            gsap.to(button, { scale: 1, backgroundColor: '#F5F5F5', color: 'black' });
           };
     
           const onMouseDown = () => {
@@ -103,7 +103,7 @@ function Opening() {
                     <p>I am a <span>front-end developer</span> from Indonesia</p>
                     <h1>Greetings,</h1>
                     <h1>My Name, Sunaryo</h1>
-                    <p>your gateway to my portfolio <br/>I choose in the of coding and design because I have a passion for coding and design.<br/> I also can speak english and chinese not to high just the daliy conversation.</p>
+                    <p>your gateway to my resume <br/>I dive into the world of coding and design because I have a passion for it.<br/> I can code using HTML, CSS, JavaScript and a little bit of C++<br/>I also can speak Indonesian, English, and Chinese—not too much, just the daily conversation.</p>
                     <button ref={buttonRef}>Project</button>
                 </div>
                 <div className="profileImg">
