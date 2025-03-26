@@ -1,6 +1,7 @@
 import {useEffect, useRef} from "react";
 import "../ComponentsStyle/Opening.css"
 import gsap from "gsap";
+import { Link } from "react-router-dom";
 import PortofoiloImg from "../assets/WhatsApp_Image_2025-03-25_at_10.25.43_4df92cc5-removebg-preview.png";
 
 function Opening() {
@@ -98,6 +99,13 @@ function Opening() {
       }, []);
     return (
         <div className="openingFolder">
+          <div className="navBar">
+            <ul>
+                <li><Link to="/Home">Home</Link></li>
+                <li><Link to="/About">About</Link></li>
+                <li><Link to="/">Back</Link></li>
+            </ul>
+        </div>
             <div className="opening">
                 <div className="text">
                     <p>I am a <span>front-end developer</span> from Indonesia</p>

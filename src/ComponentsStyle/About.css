@@ -1,13 +1,62 @@
+.about{
+    color: white;
+}
+.navBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    color : white;
+}
 .skills{
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-top: 20px;
     gap: 10px;
-    padding: 10px;
+    padding: 0 20px;
     border-radius: 10px;
+    color : white;
+    
 }
 .progress{
     width: 50px;
     height: 50px;
+}
+.education{
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    color : white;
+    .eduCon{
+        display: flex;
+        width: 400px;
+        margin-top: 10px;
+        padding: 0 20px;
+        .edu{
+            display: flex;
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px;
+            border: 1px solid white;
+            gap: 10px;
+            align-items: center;
+            color: #000;
+            .eduLogo{
+                img{
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+            .eduText{
+                .year{
+                    color: goldenrod;
+                    font-size: smaller;
+                }
+                text-align: start;
+            }
+        }
+    }
 }

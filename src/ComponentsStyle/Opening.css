@@ -3,7 +3,7 @@
     background: url(../assets/pngtree-abstract-gold-black-metallic-arrow-direction-with-blank-space-design-modern-picture-image_1972628.jpg) no-repeat right;
     background-color: #1A1A1A;
     .opening{
-        padding-top: 100px;
+        padding-top: 90px;
         color: white;
         display: flex;
         justify-content: space-around;
@@ -12,6 +12,11 @@
         padding: 50px;
         .text{
             text-align: start;
+            h1{
+                text-shadow: 2px 2px 4px red;
+            }
+            
+
             button{
                 margin-top: 20px;
                 padding: 10px 20px;
