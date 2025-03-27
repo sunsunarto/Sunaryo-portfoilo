@@ -2,11 +2,15 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Typed from "typed.js";
 import gsap from "gsap";
+import Opening from "./Opening.jsx";
+import About from "./About.jsx";
+import Project from "./Project.jsx";
+import Contact from "./Contact.jsx";
 import "../ComponentsStyle/Header.css";
 
 function Header() {
   const textRef = useRef(null);
-  const textRef2 = useRef(null);
+  // const textRef2 = useRef(null);
   const textRef3 = useRef(null);
   const buttonRef = useRef(null);
   const motionRef = useRef(null);
@@ -108,6 +112,7 @@ function Header() {
 
   return (
     <div className="HeaderContainer">
+      <div className="headerSection">
         <div className="mainHeader">
           <div className="header">
             <h4><span className="Textsun">sunsunarto</span> | <span ref={textRef}></span></h4>
@@ -115,6 +120,8 @@ function Header() {
                 <ul>
                     <li><Link to="/Home">Home</Link></li>
                     <li><Link to="/About">About</Link></li>
+                    <li><Link to="/Project">Project</Link></li>
+                    <li><Link to="/Contact">Contact</Link></li>
                 </ul>
               </div>
           </div>
@@ -127,6 +134,11 @@ function Header() {
             </div>
             <Link to="/Home" ref={buttonRef}> Dive in</Link>
         </div>
+        </div>
+        <Opening/>
+        <About/>
+        <Project/>
+        <Contact/>
     </div>
   );
 }

@@ -6,7 +6,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 20px 50px;
     border-radius: 10px;
     color : white;
 }
@@ -34,6 +34,7 @@
         width: 400px;
         margin-top: 10px;
         padding: 0 20px;
+
         .edu{
             display: flex;
             background-color: white;
@@ -45,8 +46,7 @@
             color: #000;
             .eduLogo{
                 img{
-                    width: 50px;
-                    height: 50px;
+                    width: 100px;
                 }
             }
             .eduText{
@@ -74,12 +74,13 @@
         color : white;
         flex-wrap: wrap;
     }
+    .education{
+        justify-content: center;
+    }
     .eduCon{
         max-width: 300px !important;
         .edu{
             display: flex;
-            justify-content: center;
-
         }
     }
 }

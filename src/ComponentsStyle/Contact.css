@@ -1,0 +1,65 @@
+.navBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    color : white;
+}
+.contactCon{
+    background-color: white;
+    color: #000000;
+    text-align: start;
+    padding: 10px 50px;
+    .contact{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        border-radius: 10px;
+        color : black;
+        gap: 20px;
+        .contactLeft{
+            img{
+                width: 300px;
+            }
+        }
+        .contactRight{
+            text-align: start;
+            h2{
+                text-shadow: 2px 2px 4px red;
+            }
+            .contactForm{
+                display: flex;
+                flex-direction: column;
+                .submit{
+                    margin-top: 10px;
+                    padding: 10px 20px;
+                    background-color: #F5F5F5;
+                    border-radius: 10px;
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+            ul{
+                margin-top: 20px;
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                justify-content: center;
+                li{
+                    list-style: none;
+                    cursor: pointer;
+                    text-shadow: 2px 2px 4px red;
+                    a{
+                        text-decoration: none;
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+
+}

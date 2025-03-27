@@ -2,20 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import Tzuchi from "../assets/R.jpg"
 import MB3 from "../assets/Screenshot 2025-03-26 122523.png";
 import TriRatna from "../assets/logo_tri_ratna-removebg-preview.png";
 
 import "../ComponentsStyle/About.css";
 
 const skills = [
-  { name: "Python", progress: 10, color: "#3498db" },
-  { name: "HTML", progress: 80, color: "#E34C26" },
-  { name: "CSS", progress: 85, color: "#2965F1" },
-  { name: "JS", progress: 50, color: "#F7DF1E" },
-  { name: "C++", progress: 20, color: "#61DAFB" },
-  { name: "Canva", progress: 90, color: "#00C9B7" },
-  { name: "Figma", progress: 5, color: "#FF0033" },
-  { name: "Capcut", progress: 95, color: "white" },
+  { name: "Python", circle: 100, color: "#3498db", },
+  { name: "HTML", circle: 100, color: "#E34C26", },
+  { name: "CSS", circle: 100, color: "#2965F1", },
+  { name: "JS", circle: 100, color: "#F7DF1E", },
+  { name: "C++", circle: 100, color: "#61DAFB", },
+  { name: "Canva", circle: 100, color: "#00C9B7", },
+  { name: "Figma", circle: 100, color: "#FF0033", },
+  { name: "Capcut", circle: 100, color: "white", },
 ];
 
 function About() {
@@ -25,6 +26,7 @@ function About() {
         <ul>
           <li><Link to="/Home">Home</Link></li>
           <li><Link to="/About">About</Link></li>
+          <li><Link to="/Project">Projects</Link></li>
           <li><Link to="/">Back</Link></li>
         </ul>
       </div>
@@ -38,8 +40,8 @@ function About() {
           <div key={index} className="skill">
             <CircularProgressbar
               className="progress"
-              value={skill.progress}
-              text={`${skill.progress}%`}
+              value={skill.circle}
+
               styles={buildStyles({
                 pathColor: skill.color,
                 textColor: "#fff",
@@ -55,13 +57,13 @@ function About() {
           <div className="eduCon index1">
             <div className="edu">
               <div className="eduLogo">
-                <a href="https://mb3.sch.id" target="_blank" rel="noopener noreferrer">
-                  <img src={MB3} alt="logo" />
+                <a href="https://tzuchi.sch.id" target="_blank" rel="noopener noreferrer">
+                  <img className="LogoTzuchi" src={Tzuchi} alt="logo" />
                 </a>
               </div>
               <div className="eduText">
-                <p className="year"></p>
-                <h2>Mutiara Bangsa 3 School</h2>
+                <p className="year">2015-2019</p>
+                <h2>Tzuchi school</h2>
                 <p>Primary School</p>
               </div>
             </div>
@@ -69,7 +71,23 @@ function About() {
           <div className="eduCon index2">
             <div className="edu">
               <div className="eduLogo">
-                <img src={MB3} alt="logo" />
+                <a href="https://site.mutiarabangsa.sch.id" target="_blank" rel="noopener noreferrer">
+                  <img src={MB3} alt="logo" />
+                </a>
+              </div>
+              <div className="eduText">
+                <p className="year">2019-2021</p>
+                <h2>Mutiara Bangsa 3 School</h2>
+                <p>Primary School</p>
+              </div>
+            </div>
+          </div>
+          <div className="eduCon index3">
+            <div className="edu">
+              <div className="eduLogo">
+                <a href="https://site.mutiarabangsa.sch.id" target="_blank" rel="noopener noreferrer">
+                  <img src={MB3} alt="logo" />
+                </a>
               </div>
               <div className="eduText">
                 <p className="year">2021-2024</p>
@@ -78,10 +96,12 @@ function About() {
               </div>
             </div>
           </div>
-          <div className="eduCon index3">
+          <div className="eduCon index4">
             <div className="edu">
               <div className="eduLogo">
-                <img src={TriRatna} alt="logo" />
+                <a href="https://www.triratna.sch.id/" target="_blank" rel="noopener noreferrer">
+                  <img src={TriRatna} alt="logo" />
+                </a>
               </div>
               <div className="eduText">
                 <p className="year">2024-now</p>
