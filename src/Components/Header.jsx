@@ -69,7 +69,7 @@ function Header() {
         if (gsap.isTweening(button)) {
           gsap.killTweensOf(button);
         }
-        gsap.to(button, { scale: 1.3, backgroundColor: 'red',  color: 'white' });
+        gsap.to(button, { scale: 1.3, backgroundColor: '#D84040',  color: 'white' });
       };
 
       const onMouseLeave = () => {
@@ -128,11 +128,13 @@ function Header() {
         </div>
         <div className="headerOpening">
             <div className="openingText">
-                <h1><span></span> Welcome, to Sunaryo,S Portfolio</h1>
+                <h1><span className="textWelcome">Welcome</span>, to Sunaryo,S Portfolio</h1>
                 <h3>Languages</h3>
-                <p><span ref={textRef3}></span></p>
+                <p className="codingName"><span ref={textRef3}></span><br/></p>
             </div>
-            <Link to="/Home" ref={buttonRef}> Dive in</Link>
+            <div className="scrolldown">
+              <Link to="/Home" ref={buttonRef} className="buttonDiveIn"> Dive in</Link>
+            </div>
         </div>
         </div>
         <OpeningScroll/>

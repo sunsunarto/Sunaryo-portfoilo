@@ -1,19 +1,19 @@
 .openingFolder{
     text-align: start;
-    width: 100vw;
     height: 100vh;
     .opening{
-        padding-top: 90px;
         color: black;
         display: flex;
         justify-content: space-around;
         align-items: center;
         flex-direction: row;
-        padding: 50px;
         .text{
             text-align: start;
             h1{
-                text-shadow: 2px 2px 4px red;
+                text-shadow: 2px 2px 4px #EB5B00;
+            }
+            p{
+                text-shadow: 2px 2px 4px #E9A5F1;
             }
             button{
                 margin-top: 20px;
@@ -32,4 +32,10 @@
         }
     }
     
+}
+
+@media screen and (max-width: 500px) {
+    .opening{
+        flex-direction: column-reverse !important;
+    }
 }

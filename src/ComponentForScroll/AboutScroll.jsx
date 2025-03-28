@@ -5,18 +5,27 @@ import "react-circular-progressbar/dist/styles.css";
 import Tzuchi from "../assets/R.jpg"
 import MB3 from "../assets/Screenshot 2025-03-26 122523.png";
 import TriRatna from "../assets/logo_tri_ratna-removebg-preview.png";
+import Cer1 from "../assets/Achivments/certificate _01.jpg"
+import Cer2 from "../assets/Achivments/certificate _02.jpg"
+import Cer3 from "../assets/Achivments/certificate _03.jpg"
+import Cer4 from "../assets/Achivments/certificate _04.jpg"
+import Cer5 from "../assets/Achivments/certificate _05.jpg"
+import Cer6 from "../assets/Achivments/certificate _06.png"
+import Cer7 from "../assets/Achivments/certificate _07.jpg"
 
 import "../ComponentsStyle/About.css";
 
 const skills = [
-  { name: "Python", circle: 100, color: "#3498db", },
-  { name: "HTML", circle: 100, color: "#E34C26", },
-  { name: "CSS", circle: 100, color: "#2965F1", },
-  { name: "JS", circle: 100, color: "#F7DF1E", },
-  { name: "C++", circle: 100, color: "#61DAFB", },
-  { name: "Canva", circle: 100, color: "#00C9B7", },
-  { name: "Figma", circle: 100, color: "#FF0033", },
-  { name: "Capcut", circle: 100, color: "white", },
+  { name: "Python", progress: 10, color: "#3498db", },
+  { name: "HTML", progress: 70, color: "#E34C26", },
+  { name: "CSS", progress: 70, color: "#2965F1", },
+  { name: "JS", progress: 60, color: "#F7DF1E", },
+  { name: "C++", progress: 20, color: "#61DAFB", },
+  { name: "Canva", progress: 90, color: "#00C9B7", },
+  { name: "Figma", progress: 10, color: "#FF0033", },
+  { name: "Capcut", progress: 90, color: "white", },
+  { name: "Blender", progress: 5, color: "#E34C26"},
+  { name: "SweetHome3d", progress: 90, color: "navy-blue"},
 ];
 
 function About() {
@@ -32,20 +41,20 @@ function About() {
           <div key={index} className="skill">
             <CircularProgressbar
               className="progress"
-              value={skill.circle}
-
+              value={skill.progress}
+              text={`${skill.progress}%`}
               styles={buildStyles({
                 pathColor: skill.color,
-                textColor: "#fff",
-              })}
-            />
+                textColor: "black",
+              })}/>
             <p>{skill.name}</p>
           </div>
         ))}
       </div>
-      <div className="eduAndAchiev">
+      <h2 className="eduAch">Education & Achievement</h2>
+      <div className="eduAndAch">
         <div className="education">
-          <h2>Education & Achievement</h2>
+          <h1>Education</h1>
           <div className="eduCon index1">
             <div className="edu">
               <div className="eduLogo">
@@ -103,10 +112,79 @@ function About() {
             </div>
           </div>
         </div>
+        <div className="achivement">
+          <h2>Achievements</h2>
+          <div className="achCon">
+            <div className="ach indexAch1">
+              <div className="achImg">
+                <img src={Cer1} alt="" />
+              </div>
+              <div className="AchText">
+                <h2>弟子规 (Di Zi Gui)</h2>
+                <p>11/12/2016</p>
+              </div>
+            </div>
+            <div className="ach indexAch2">
+              <div className="achImg">
+                <img src={Cer2} alt="" />
+              </div>
+              <div className="AchText">
+                <h2>taekwondo</h2>
+                <p>11/12/2016</p>
+              </div>
+            </div>
+            <div className="ach indexAch3">
+              <div className="achImg">
+                <img src={Cer3} alt="" />
+              </div>
+              <div className="AchText">
+                <h2>HSK 2</h2>
+                <p>03/12/2017</p>
+              </div>
+            </div>
+            <div className="ach indexAch4">
+              <div className="achImg">
+                <img src={Cer4} alt="" />
+              </div>
+              <div className="AchText">
+                <h2>讀經班 (Du Jing Ban)</h2>
+                <p>07/07/2022</p>
+              </div>
+            </div>
+            <div className="ach indexAch5">
+              <div className="achImg">
+                <img src={Cer5} alt=""/>
+              </div>
+              <div className="AchText">
+                <h2>Anggota Pramuka</h2>
+                <p>31/1/2024</p>
+              </div>
+            </div>
+            <div className="ach indexAch6">
+              <div className="achImg">
+                <img src={Cer6} alt="" />
+              </div>
+              <div className="AchText">
+                <h2>Webinar Portofoilo</h2>
+                <p>27/03/2025</p>
+              </div>
+            </div>
+            <div className="ach indexAch7">
+              <div className="achImg">
+                <img src={Cer7} alt="" />
+              </div>
+              <div className="AchText">
+                <h2>second place class of 2024</h2>
+                <p>13/06/2024</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
 export default About;
+
 

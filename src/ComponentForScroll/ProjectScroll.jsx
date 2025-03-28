@@ -33,7 +33,22 @@ function Project() {
                     spaceBetween={50}
                     slidesPerView={3}
                     onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}>
+                    onSwiper={(swiper) => console.log(swiper)}
+                    breakpoints={{
+                        200: {
+                          slidesPerView: 1,
+                        },
+                        480: {
+                          slidesPerView: 1,
+                          
+                        },
+                        768: {
+                          slidesPerView: 2,
+                        },
+                        1024: {
+                          slidesPerView: 3,
+                        },
+                      }}>
                     <SwiperSlide>
                         <div className="projectSlide slide1">
                             <h1>Socio</h1>

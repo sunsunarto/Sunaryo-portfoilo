@@ -8,10 +8,9 @@
     color : white;
 }
 .contactCon{
-    background-color: white;
+    height: 100vh;
     color: #000000;
     text-align: start;
-    padding: 10px 50px;
     .contact{
         display: flex;
         flex-direction: row;
@@ -64,7 +63,11 @@
 
 }
 @media screen and (max-width: 600px) {
+    .contactCon{
+        padding: 0 !important;
+    }
     .contact{
         flex-direction: column !important;
+
     }    
 }

@@ -25,7 +25,11 @@
     width: 250px;
     height: 250px;
 }
+.eduAch{
+    margin-top: 50px;
+}
 .eduAndAch{
+    margin-top: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -99,7 +103,6 @@
         
         }
         .indexAch7{
-            width: "-webkit-fill-available";
             .achImg{
                 img{
                     width: 600px;
@@ -108,8 +111,14 @@
         }
     }
 }
-@media screen and (max-width: 800px){
-    
+@media screen and (max-width: 530px){
+    .indexAch7{
+        .achImg{
+            img{
+                width: 300px !important;
+            }
+        }
+    }
 }
 @media  screen and (max-width: 500px) {
     .skills{

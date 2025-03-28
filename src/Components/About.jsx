@@ -60,7 +60,7 @@ function About() {
           </div>
         ))}
       </div>
-      <h2>Education & Achievement</h2>
+      <h2 className="eduAch">Education & Achievement</h2>
       <div className="eduAndAch">
         <div className="education">
           <h1>Education</h1>
