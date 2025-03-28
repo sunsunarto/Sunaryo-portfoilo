@@ -1,5 +1,5 @@
 .about{
-    color: white;
+    color: black;
 }
 .navBar{
     display: flex;
@@ -8,7 +8,7 @@
     align-items: center;
     padding: 20px 50px;
     border-radius: 10px;
-    color : white;
+    color : black;
 }
 .skills{
     display: flex;
@@ -18,18 +18,27 @@
     gap: 10px;
     padding: 0 20px;
     border-radius: 10px;
-    color : white;
-    
+    color : black;
+    flex-wrap: wrap;
 }
 .progress{
-    width: 50px;
-    height: 50px;
+    width: 250px;
+    height: 250px;
 }
-.education{
+.eduAndAch{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     margin-top: 20px;
-    padding: 10px;
+    gap: 10px;
+    padding: 0 20px;
     border-radius: 10px;
     color : white;
+    flex-wrap: wrap;
+}
+.education{
+    border-radius: 10px;
+    color : black;
     .eduCon{
         width: 400px;
         margin-top: 10px;
@@ -40,7 +49,7 @@
             background-color: white;
             border-radius: 10px;
             padding: 10px;
-            border: 1px solid white;
+            border: 1px solid black;
             gap: 10px;
             align-items: center;
             color: #000;
@@ -59,19 +68,59 @@
         }
     }
 }
+.achivement{
+    border-radius: 10px;
+    color: black;
+    .achCon{
+        max-width: 700px;
+        display: flex;
+        gap : 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        .ach{
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px;
+            border: 1px solid black;
+            gap: 10px;
+            color: #000;
+            .achImg{
+                img{
+                    width: 300px;
+                }
+            }
+            .achText{
+                .year{
+                    color: goldenrod;
+                    font-size: smaller;
+                }
+                text-align: start;
+            }
+        
+        }
+        .indexAch7{
+            width: "-webkit-fill-available";
+            .achImg{
+                img{
+                    width: 600px;
+                }
+            }
+        }
+    }
+}
 @media screen and (max-width: 800px){
     
 }
 @media  screen and (max-width: 500px) {
     .skills{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         margin-top: 20px;
         gap: 10px;
         padding: 0 20px;
         border-radius: 10px;
-        color : white;
+        color : black;
         flex-wrap: wrap;
     }
     .education{

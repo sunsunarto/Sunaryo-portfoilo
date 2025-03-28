@@ -1,12 +1,10 @@
 .openingFolder{
     text-align: start;
-    background: url(../assets/pngtree-abstract-gold-black-metallic-arrow-direction-with-blank-space-design-modern-picture-image_1972628.jpg) no-repeat right;
-    background-color: #1A1A1A;
     width: 100vw;
     height: 100vh;
     .opening{
         padding-top: 90px;
-        color: white;
+        color: black;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -17,8 +15,6 @@
             h1{
                 text-shadow: 2px 2px 4px red;
             }
-            
-
             button{
                 margin-top: 20px;
                 padding: 10px 20px;
@@ -31,7 +27,6 @@
         .profileImg{
             img{
                 width: 200px;
-                height: 350px;
                 border-radius: 20px;
             }
         }

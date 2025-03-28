@@ -27,36 +27,13 @@ function Project() {
 
     return (
         <div className="projectCon">
-            <div className="navBar">
-                <ul>
-                    <li><Link to="/Home">Home</Link></li>
-                    <li><Link to="/About">About</Link></li>
-                    <li><Link to="/Project">Project</Link></li>
-                    <li><Link to="/">Back</Link></li>
-                </ul>
-            </div>
             <div className="project">
                 <h1>My Projects</h1>
                 <Swiper
                     spaceBetween={50}
                     slidesPerView={3}
                     onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
-                    breakpoints={{
-                        200: {
-                          slidesPerView: 1,
-                        },
-                        480: {
-                          slidesPerView: 1,
-                          
-                        },
-                        768: {
-                          slidesPerView: 2,
-                        },
-                        1024: {
-                          slidesPerView: 3,
-                        },
-                      }}>
+                    onSwiper={(swiper) => console.log(swiper)}>
                     <SwiperSlide>
                         <div className="projectSlide slide1">
                             <h1>Socio</h1>

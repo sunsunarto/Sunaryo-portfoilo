@@ -2,10 +2,10 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Typed from "typed.js";
 import gsap from "gsap";
-import Opening from "./Opening.jsx";
-import About from "./About.jsx";
-import Project from "./Project.jsx";
-import Contact from "./Contact.jsx";
+import OpeningScroll from '../ComponentForScroll/OpeningScroll.jsx'
+import AboutScroll from '../ComponentForScroll/AboutScroll.jsx'
+import ProjectScroll from '../ComponentForScroll/ProjectScroll.jsx'
+import ContactScroll from '../ComponentForScroll/ContactScroll.jsx'
 import "../ComponentsStyle/Header.css";
 
 function Header() {
@@ -128,17 +128,17 @@ function Header() {
         </div>
         <div className="headerOpening">
             <div className="openingText">
-                <h1><span></span> Welcome, to My Portfolio</h1>
+                <h1><span></span> Welcome, to Sunaryo,S Portfolio</h1>
                 <h3>Languages</h3>
                 <p><span ref={textRef3}></span></p>
             </div>
             <Link to="/Home" ref={buttonRef}> Dive in</Link>
         </div>
         </div>
-        <Opening/>
-        <About/>
-        <Project/>
-        <Contact/>
+        <OpeningScroll/>
+        <AboutScroll/>
+        <ProjectScroll/>
+        <ContactScroll/>
     </div>
   );
 }
