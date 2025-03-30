@@ -61,3 +61,26 @@ a{
         }
     }
 }
+@media screen and (max-width: 400px) {
+    .mainHeader{
+        .header{
+            .nav{
+                ul{
+                    gap: 10px;
+                }
+            }
+        }
+    }    
+}
+
+@media screen and (max-width: 300px) {
+    .mainHeader{
+        .header{
+            .nav{
+                ul{
+                    gap: 5px;
+                }
+            }
+        }
+    }    
+}
