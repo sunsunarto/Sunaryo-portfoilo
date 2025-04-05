@@ -15,7 +15,7 @@ function Opening() {
         gsap.fromTo('.openingFolder', {
             opacity: 0,
             duration: 2,
-            y: -300
+            y: 100
         }, {
             opacity: 1,
             y: 0,

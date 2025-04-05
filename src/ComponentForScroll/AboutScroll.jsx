@@ -36,6 +36,9 @@ function About() {
   const motionRef = useRef(null);
   const eduRefs = useRef([]);
   const achRefs = useRef([]);
+  const textEduAch = useRef(null);
+  const textEdu = useRef(null);
+  const textAch = useRef(null);
 
   useEffect(() => { 
     gsap.fromTo(aboutRef.current, 
@@ -70,7 +73,7 @@ function About() {
     }
   }, [motionRef]);
 
-  useEffect(() => { 
+  useEffect(() => { //edu&ach
     eduRefs.current.forEach((el, index) => {
       gsap.fromTo(el, 
         { opacity: 0, x: -50 },
@@ -106,6 +109,59 @@ function About() {
     });
   }, []);
   
+  useEffect(() => { //title text
+    if (textEduAch.current) {
+      gsap.fromTo(textEduAch.current, 
+        { opacity: 0, y: -50 },
+        {
+          opacity: 1, y: 0, duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: textEduAch.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+            onLeaveBack: () => gsap.to(textEduAch.current, { opacity: 0, y: 100, duration: 1 }),
+          },
+        }
+      );
+    }
+  }, [textEduAch]);
+
+  useEffect(() => { //title edu
+    if (textEduAch.current) {
+      gsap.fromTo(textEdu.current, 
+        { opacity: 0, x: -50 },
+        {
+          opacity: 1, x: 0, duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: textEdu.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+            onLeaveBack: () => gsap.to(textEdu.current, { opacity: 0, x: 100, duration: 1 }),
+          },
+        }
+      );
+    }
+  }, [textEdu]);
+
+  useEffect(() => { //title ach
+    if (textAch.current) {
+      gsap.fromTo(textAch.current, 
+        { opacity: 0, x: 50 },
+        {
+          opacity: 1, x: 0, duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: textEduAch.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+            onLeaveBack: () => gsap.to(textAch.current, { opacity: 0, x: 50, duration: 1 }),
+          },
+        }
+      );
+    }
+  }, [textAch]);
   return (
     <div className="about">
       <div className="aboutText" ref={aboutRef}>
@@ -130,10 +186,10 @@ function About() {
           </div>
         ))}
       </div>
-      <h2 className="eduAch">Education & Achievement</h2>
+      <h2 className="eduAch" ref={textEduAch}>Education & Achievement</h2>
       <div className="eduAndAch">
         <div className="education">
-          <h1>Education</h1>
+          <h1 ref={textEdu}>Education</h1>
           <div className="eduCon index1" ref={(el) => eduRefs.current[0] = el}>
             <div className="edu">
               <div className="eduLogo">
@@ -192,7 +248,7 @@ function About() {
           </div>
         </div>
         <div className="achivement">
-          <h2>Achievements</h2>
+          <h2 ref={textAch}>Achievements</h2>
           <div className="achCon">
             <div className="ach indexAch1" ref={(el) => achRefs.current[0] = el}>
               <div className="achImg">
