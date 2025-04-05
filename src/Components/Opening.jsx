@@ -2,7 +2,10 @@ import {useEffect, useRef} from "react";
 import "../ComponentsStyle/Opening.css"
 import gsap from "gsap";
 import { Link } from "react-router-dom";
+import ScrollTrigger from "gsap/src/ScrollTrigger";
 import PortofoiloImg from "../assets/WhatsApp_Image_2025-03-25_at_10.25.43_4df92cc5-removebg-preview.png";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Opening() {
 
@@ -19,6 +22,14 @@ function Opening() {
             y: 0,
             duration: 1,
             ease: 'power4.out',
+            scrollTrigger: {
+                trigger: '.openingFolder',
+                start: 'top 50%',
+                end: 'bottom 50%',
+                toggleActions: 'restart pause reset',
+                scrub: true,
+                markers: true
+            }
         })
     }, [])
     
