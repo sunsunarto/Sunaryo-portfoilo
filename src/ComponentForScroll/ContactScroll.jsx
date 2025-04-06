@@ -1,12 +1,15 @@
-import { useRef }from "react";
-import { Link } from "react-router-dom";
+import { useRef, useEffect }from "react";
+import gsap from "gsap";
 import profile from "../assets/WhatsApp_Image_2025-03-25_at_10.25.43_4df92cc5-removebg-preview.png"
 import "../ComponentsStyle/Contact.css";
 import emailjs from '@emailjs/browser';
+import scrollTrigger from "gsap/src/ScrollTrigger";
+
+gsap.registerPlugin(scrollTrigger);
 
 const Contact = () => {
     const form = useRef();
-
+    const contact = useRef();
     const sendEmail = (e) => {
       e.preventDefault();
   
@@ -23,9 +26,27 @@ const Contact = () => {
           },
         );
     };
+
+    useEffect(() => {
+        gsap.fromTo(contact.current, {
+            opacity: 0,
+            y: 100
+        }, {
+            opacity: 1,
+            y: 0,
+            duration: 2,
+            scrollTrigger: {
+                trigger: contact.current,
+                start: 'top bottom',
+                end: 'bottom 70%',
+                toggleActions: 'restart pause reset',
+                markers: true
+            }
+        });
+    }, [contact]);
     return (
         <div className="maincontactCon">
-            <div className="contactCon">
+            <div ref={contact} className="contactCon">
                 <h1>Contact</h1>
                 <div className="contact">
                     <div className="contactLeft">

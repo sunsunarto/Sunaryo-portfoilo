@@ -31,6 +31,7 @@ const skills = [
 function About() {
   return (
     <div className="about">
+      
       <div className="navBar">
         <ul>
           <li><Link to="/Home">Home</Link></li>
@@ -131,6 +132,7 @@ function About() {
               <div className="AchText">
                 <h2>弟子规 (Di Zi Gui)</h2>
                 <p>11/12/2016</p>
+                <Link to="/DiZiGui">Details</Link>
               </div>
             </div>
             <div className="ach indexAch2">
@@ -140,6 +142,7 @@ function About() {
               <div className="AchText">
                 <h2>taekwondo</h2>
                 <p>11/12/2016</p>
+                <Link to="/Taekwondo">Details</Link>
               </div>
             </div>
             <div className="ach indexAch3">
@@ -149,6 +152,7 @@ function About() {
               <div className="AchText">
                 <h2>HSK 2</h2>
                 <p>03/12/2017</p>
+                <Link to="/HSK2">Details</Link>
               </div>
             </div>
             <div className="ach indexAch4">
@@ -157,7 +161,8 @@ function About() {
               </div>
               <div className="AchText">
                 <h2>讀經班 (Du Jing Ban)</h2>
-                <p>07/07/2022</p>
+                <p>02/07/2022</p>
+                <Link to="/DuJingBan">Details</Link>
               </div>
             </div>
             <div className="ach indexAch5">
@@ -167,6 +172,7 @@ function About() {
               <div className="AchText">
                 <h2>Anggota Pramuka</h2>
                 <p>31/1/2024</p>
+                <Link to="/Pramuka">Details</Link>
               </div>
             </div>
             <div className="ach indexAch6">
@@ -176,6 +182,7 @@ function About() {
               <div className="AchText">
                 <h2>Webinar Portofoilo</h2>
                 <p>27/03/2025</p>
+                <Link to="/Webinar">Details</Link>
               </div>
             </div>
             <div className="ach indexAch7">
@@ -185,6 +192,7 @@ function About() {
               <div className="AchText">
                 <h2>second place class of 2024</h2>
                 <p>13/06/2024</p>
+                <Link to="/ClassOf2024">Details</Link>
               </div>
             </div>
           </div>
@@ -195,5 +203,3 @@ function About() {
 }
 
 export default About;
-
-
