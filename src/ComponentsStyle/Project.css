@@ -1,5 +1,6 @@
 .projectCon{
-    height: 100vh;
+    height: 150vh;
+    margin-top: 50px;
     .navBar{
         display: flex;
         flex-direction: row;
@@ -13,7 +14,7 @@
         text-align: center;
         .projectSlide{
             display: flex;
-            max-width: 90%;
+            max-width: 95%;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -23,6 +24,27 @@
             background-color: #B4EBE6;
             img{
                 width: 300px;
+            }
+            p{
+                font-size: 15px;
+                text-align: start;
+            }
+            .githubAndLink{
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                .github{
+                    padding: 5px;
+                    background-color: #F5F5F5;
+                    border-radius: 10px;
+                    border: none;
+                }
+                .link{
+                    padding: 5px;
+                    background-color: #F5F5F5;
+                    border-radius: 10px;
+                    border: none;
+                }
             }
         }
     }

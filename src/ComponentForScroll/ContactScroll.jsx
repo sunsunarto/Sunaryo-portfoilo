@@ -40,7 +40,6 @@ const Contact = () => {
                 start: 'top bottom',
                 end: 'bottom 70%',
                 toggleActions: 'restart pause reset',
-                markers: true
             }
         });
     }, [contact]);

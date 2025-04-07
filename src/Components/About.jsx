@@ -1,5 +1,7 @@
-import React from "react";
+import { useEffect, useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
+import { gsap } from "gsap";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import Tzuchi from "../assets/R.jpg"
@@ -12,16 +14,17 @@ import Cer4 from "../assets/Achivments/certificate _04.jpg"
 import Cer5 from "../assets/Achivments/certificate _05.jpg"
 import Cer6 from "../assets/Achivments/certificate _06.png"
 import Cer7 from "../assets/Achivments/certificate _07.jpg"
-
 import "../ComponentsStyle/About.css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const skills = [
   { name: "Python", progress: 10, color: "#3498db", },
-  { name: "HTML", progress: 70, color: "#E34C26", },
+  { name: "HTML", progress: 60, color: "#E34C26", },
   { name: "CSS", progress: 70, color: "#2965F1", },
   { name: "JS", progress: 60, color: "#F7DF1E", },
   { name: "C++", progress: 20, color: "#61DAFB", },
-  { name: "Canva", progress: 90, color: "#00C9B7", },
+  { name: "Canva", progress: 80, color: "#00C9B7", },
   { name: "Figma", progress: 10, color: "#FF0033", },
   { name: "Capcut", progress: 90, color: "white", },
   { name: "Blender", progress: 5, color: "#E34C26"},
@@ -29,26 +32,157 @@ const skills = [
 ];
 
 function About() {
+
+  const aboutRef = useRef(null);
+  const motionRef = useRef(null);
+  const eduRefs = useRef([]);
+  const achRefs = useRef([]);
+  const textEduAch = useRef(null);
+  const textEdu = useRef(null);
+  const textAch = useRef(null);
+
+  useEffect(() => { 
+    gsap.fromTo(aboutRef.current, 
+      { opacity: 0, y: 50 },
+      { 
+        opacity: 1, y: 0, duration: 1.5, ease: "power3.inOut",
+        scrollTrigger: {
+          trigger: aboutRef.current,
+          start: "top center",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  }, [aboutRef]);
+  
+  useEffect(() => { 
+    if (motionRef.current) {
+      const elements = motionRef.current.children;
+      gsap.fromTo(
+        elements,
+        { y: '-50px', opacity: 0 },
+        { 
+          y: '0px', opacity: 1, duration: 1, ease: 'power3.outIn',
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: motionRef.current,
+            start: 'top 50%',
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }
+  }, [motionRef]);
+
+  useEffect(() => { //edu&ach
+    eduRefs.current.forEach((el, index) => {
+      gsap.fromTo(el, 
+        { opacity: 0, x: -50 },
+        {
+          opacity: 1, x: 0, duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top center",
+            toggleActions: "play none none reverse",
+            onLeaveBack: () => gsap.to(el, { opacity: 0, x: -100, duration: 1 }), // Animate individual elements
+          },
+          delay: index * 0.3,
+        }
+      );
+    });
+  
+    achRefs.current.forEach((el, index) => {
+      gsap.fromTo(el, 
+        { opacity: 0, x: 50 },
+        {
+          opacity: 1, x: 0, duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top center",
+            toggleActions: "play none none reverse",
+            onLeaveBack: () => gsap.to(el, { opacity: 0, x: 100, duration: 1 }), // Fix glitch by animating individual elements
+          },
+          delay: index * 0.3,
+        }
+      );
+    });
+  }, []);
+  
+  useEffect(() => { //title text
+    if (textEduAch.current) {
+      gsap.fromTo(textEduAch.current, 
+        { opacity: 0, y: -50 },
+        {
+          opacity: 1, y: 0, duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: textEduAch.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+            onLeaveBack: () => gsap.to(textEduAch.current, { opacity: 0, y: 100, duration: 1 }),
+          },
+        }
+      );
+    }
+  }, [textEduAch]);
+
+  useEffect(() => { //title edu
+    if (textEduAch.current) {
+      gsap.fromTo(textEdu.current, 
+        { opacity: 0, x: -50 },
+        {
+          opacity: 1, x: 0, duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: textEdu.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+            onLeaveBack: () => gsap.to(textEdu.current, { opacity: 0, x: 100, duration: 1 }),
+          },
+        }
+      );
+    }
+  }, [textEdu]);
+
+  useEffect(() => { //title ach
+    if (textAch.current) {
+      gsap.fromTo(textAch.current, 
+        { opacity: 0, x: 50 },
+        {
+          opacity: 1, x: 0, duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: textEduAch.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+            onLeaveBack: () => gsap.to(textAch.current, { opacity: 0, x: 50, duration: 1 }),
+          },
+        }
+      );
+    }
+  }, [textAch]);
   return (
-    <div className="about">
-      
+    <div className="about" style={{marginBottom: "200px"}}>
       <div className="navBar">
-        <ul>
-          <li><Link to="/Home">Home</Link></li>
-          <li><Link to="/About">About</Link></li>
-          <li><Link to="/Project">Projects</Link></li>
-          <li><Link to="/Contact">Contact</Link></li>
-          <li><Link to="/">Back</Link></li>
-        </ul>
-      </div>
+                <ul>
+                    <li><Link to="/Home">Home</Link></li>
+                    <li><Link to="/About">About</Link></li>
+                    <li><Link to="/Project">Project</Link></li>
+                    <li><Link to="/">Back</Link></li>
+                </ul>
+            </div>
+      <div className="aboutText" ref={aboutRef}>
       <h1>Skills</h1>
       <p className="descriptionSkill">
         I'm a passionate software engineer with a strong interest in web development. I have experience with
         a variety of programming languages and frameworks, and I'm always looking to learn more.
       </p>
-      <div className="skills">
+      </div>
+      <div className="skills" ref={motionRef}>
         {skills.map((skill, index) => (
-          <div key={index} className="skill">
+          <div key={index} className="skill" >
             <CircularProgressbar
               className="progress"
               value={skill.progress}
@@ -61,11 +195,11 @@ function About() {
           </div>
         ))}
       </div>
-      <h2 className="eduAch">Education & Achievement</h2>
+      <h2 className="eduAch" ref={textEduAch}>Education & Achievement</h2>
       <div className="eduAndAch">
         <div className="education">
-          <h1>Education</h1>
-          <div className="eduCon index1">
+          <h1 ref={textEdu}>Education</h1>
+          <div className="eduCon index1" ref={(el) => eduRefs.current[0] = el}>
             <div className="edu">
               <div className="eduLogo">
                 <a href="https://tzuchi.sch.id" target="_blank" rel="noopener noreferrer">
@@ -79,7 +213,7 @@ function About() {
               </div>
             </div>
           </div>
-          <div className="eduCon index2">
+          <div className="eduCon index2" ref={(el) => eduRefs.current[1] = el}>
             <div className="edu">
               <div className="eduLogo">
                 <a href="https://site.mutiarabangsa.sch.id" target="_blank" rel="noopener noreferrer">
@@ -93,7 +227,7 @@ function About() {
               </div>
             </div>
           </div>
-          <div className="eduCon index3">
+          <div className="eduCon index3" ref={(el) => eduRefs.current[2] = el}>
             <div className="edu">
               <div className="eduLogo">
                 <a href="https://site.mutiarabangsa.sch.id" target="_blank" rel="noopener noreferrer">
@@ -107,7 +241,7 @@ function About() {
               </div>
             </div>
           </div>
-          <div className="eduCon index4">
+          <div className="eduCon index4" ref={(el) => eduRefs.current[3] = el}>
             <div className="edu">
               <div className="eduLogo">
                 <a href="https://www.triratna.sch.id/" target="_blank" rel="noopener noreferrer">
@@ -123,9 +257,9 @@ function About() {
           </div>
         </div>
         <div className="achivement">
-          <h2>Achievements</h2>
+          <h2 ref={textAch}>Achievements</h2>
           <div className="achCon">
-            <div className="ach indexAch1">
+            <div className="ach indexAch1" ref={(el) => achRefs.current[0] = el}>
               <div className="achImg">
                 <img src={Cer1} alt="" />
               </div>
@@ -135,7 +269,7 @@ function About() {
                 <Link to="/DiZiGui">Details</Link>
               </div>
             </div>
-            <div className="ach indexAch2">
+            <div className="ach indexAch2" ref={(el) => achRefs.current[1] = el}>
               <div className="achImg">
                 <img src={Cer2} alt="" />
               </div>
@@ -145,7 +279,7 @@ function About() {
                 <Link to="/Taekwondo">Details</Link>
               </div>
             </div>
-            <div className="ach indexAch3">
+            <div className="ach indexAch3" ref={(el) => achRefs.current[2] = el}>
               <div className="achImg">
                 <img src={Cer3} alt="" />
               </div>
@@ -155,7 +289,7 @@ function About() {
                 <Link to="/HSK2">Details</Link>
               </div>
             </div>
-            <div className="ach indexAch4">
+            <div className="ach indexAch4" ref={(el) => achRefs.current[3] = el}>
               <div className="achImg">
                 <img src={Cer4} alt="" />
               </div>
@@ -165,7 +299,7 @@ function About() {
                 <Link to="/DuJingBan">Details</Link>
               </div>
             </div>
-            <div className="ach indexAch5">
+            <div className="ach indexAch5" ref={(el) => achRefs.current[4] = el}>
               <div className="achImg">
                 <img src={Cer5} alt=""/>
               </div>
@@ -175,7 +309,7 @@ function About() {
                 <Link to="/Pramuka">Details</Link>
               </div>
             </div>
-            <div className="ach indexAch6">
+            <div className="ach indexAch6" ref={(el) => achRefs.current[5] = el}>
               <div className="achImg">
                 <img src={Cer6} alt="" />
               </div>
@@ -185,7 +319,7 @@ function About() {
                 <Link to="/Webinar">Details</Link>
               </div>
             </div>
-            <div className="ach indexAch7">
+            <div className="ach indexAch7" ref={(el) => achRefs.current[6] = el}>
               <div className="achImg">
                 <img src={Cer7} alt="" />
               </div>

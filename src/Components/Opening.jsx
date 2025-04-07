@@ -28,7 +28,6 @@ function Opening() {
                 end: 'bottom 50%',
                 toggleActions: 'restart pause reset',
                 scrub: true,
-                markers: true
             }
         })
     }, [])
