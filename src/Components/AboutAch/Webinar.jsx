@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import image from "../../assets/Achivments/certificate _06.png";
-import "../../ComponentsStyle/AboutAch/Webinar.css";
+import "../../ComponentsStyle/AboutAch/webinar.css";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 
