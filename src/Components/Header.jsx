@@ -6,6 +6,7 @@ import OpeningScroll from '../ComponentForScroll/OpeningScroll.jsx'
 import AboutScroll from '../ComponentForScroll/AboutScroll.jsx'
 import ProjectScroll from '../ComponentForScroll/ProjectScroll.jsx'
 import ContactScroll from '../ComponentForScroll/ContactScroll.jsx'
+import Footer from "./Footer.jsx";
 import "../ComponentsStyle/Header.css";
 
 function Header() {
@@ -141,6 +142,7 @@ function Header() {
         <AboutScroll/>
         <ProjectScroll/>
         <ContactScroll/>
+        <Footer/>
     </div>
   );
 }

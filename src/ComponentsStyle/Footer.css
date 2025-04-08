@@ -1,0 +1,42 @@
+.FooterCon{
+    background-color: #C1C1C1;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    .footerText{
+        padding: 20px;
+        text-align: start;
+        .followMe{
+            .followLinks{
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                gap: 10px;
+                flex-wrap: wrap;
+                img{
+                    width: 100px;
+                }
+                a{
+                    text-decoration: none;
+                    color: black;
+                    cursor: pointer;
+                    padding: 10px;
+                    background-color: #F5F5F5;
+                    border-radius: 10px;
+                    &:hover{
+                        background-color: #B4EBE6;
+                    }
+                }
+            }
+        }
+    }
+}
+.youtube, .github, .ig{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.github{
+    gap: 10px;
+}
